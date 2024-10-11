@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import class_scope from './header.module.css'
+
 
 export default function AuthInputs() {
   const [enteredEmail, setEnteredEmail] = useState('');
@@ -24,18 +26,20 @@ export default function AuthInputs() {
     <div id="auth-inputs">
       <div className="controls">
         <p>
-          <label>Email</label>
+          <label className={class_scope.paragraph}>Email</label>
           <input
+          style={{ background : emailNotValid? "#fed2d2" : '#d1d5db'}}
             type="email"
-            className={emailNotValid ? 'invalid' : undefined}
+            // className={emailNotValid ? 'invalid' : undefined}
             onChange={(event) => handleInputChange('email', event.target.value)}
           />
         </p>
         <p>
-          <label>Password</label>
+          <label className={`label  ${passwordNotValid ? 'invalid' : undefined}`}>Password</label>
           <input
+          style={{background : passwordNotValid ?  "#fed2d2" : '#d1d5db'}}
             type="password"
-            className={passwordNotValid ? 'invalid' : undefined}
+            // className={passwordNotValid ? 'invalid' : undefined}
             onChange={(event) =>
               handleInputChange('password', event.target.value)
             }

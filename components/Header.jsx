@@ -1,11 +1,12 @@
 import logo from '../assets/logo.png';
+import class_scope from './header.module.css'
 
 export default function Header() {
   return (
     <header>
       <img src={logo} alt="A canvas" />
       <h1>ReactArt</h1>
-      <p>A community of artists and art-lovers.</p>
+      <p className={class_scope.paragraph}>A community of artists and art-lovers.</p>
     </header>
   );
 }
